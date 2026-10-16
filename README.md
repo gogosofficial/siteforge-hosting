@@ -1,1 +1,1 @@
-# siteforge
+# siteforge-hosting
