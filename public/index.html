@@ -51,7 +51,7 @@ header{position:sticky;top:0;z-index:1000;background:rgba(6,8,13,.94);border-bot
 nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:var(--header-h)}
 .logo{display:block;flex-shrink:0;width:var(--logo-w);height:var(--logo-h);overflow:hidden;border-radius:8px}
 .logo img{display:block;width:100%;height:100%;object-fit:contain;object-position:left center;transform:scale(var(--logo-zoom));transform-origin:left center}
-.nav-links{display:flex;align-items:center;gap:22px;list-style:none}
+.nav-links{display:flex;align-items:center;gap:18px;list-style:none}
 .nav-links a:not(.btn){color:var(--muted);font-size:.93rem;font-weight:500;padding:8px 2px;white-space:nowrap;transition:color .2s}
 .nav-links a:not(.btn):hover{color:var(--accent)}
 .nav-links .btn{min-height:42px;padding:8px 18px;font-size:.88rem}
@@ -161,10 +161,23 @@ footer p{font-size:.9rem}
 .reveal-ready .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
 .reveal-ready .reveal.in{opacity:1;transform:none}}
 
+/* Referenzen */
+.ref-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
+.ref-card{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:border-color .2s,transform .2s,box-shadow .2s}
+@media(hover:hover){.ref-card:hover{border-color:var(--line-active);transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.4)}}
+.ref-body{padding:24px;display:flex;flex-direction:column;flex-grow:1}
+.ref-badge{align-self:flex-start;font-size:.76rem;font-weight:600;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(56,189,248,.22);padding:3px 10px;border-radius:20px;margin-bottom:12px}
+.ref-card h3{font-size:1.3rem;margin-bottom:8px}
+.ref-desc{font-size:.92rem;margin-bottom:18px;flex-grow:1}
+.ref-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.ref-tags span{font:.75rem var(--mono);color:var(--dim);background:var(--surface);border:1px solid var(--line);padding:4px 9px;border-radius:6px}
+.ref-link{gap:8px}
+
 /* Breakpoints */
 @media(min-width:1500px){:root{--header-h:76px;--logo-h:56px;--logo-w:220px}.container{max-width:1240px}}
 @media(max-width:1060px){
 :root{--header-h:64px}
+.ref-grid{grid-template-columns:minmax(0,1fr);max-width:520px;margin:0 auto}
 .js .burger{display:inline-flex}
 .js .nav-links{position:fixed;top:var(--header-h);left:0;right:0;max-height:calc(100vh - var(--header-h));max-height:calc(100dvh - var(--header-h));overflow-y:auto;flex-direction:column;align-items:stretch;gap:6px;padding:18px var(--pad) 28px;background:rgba(6,8,13,.98);border-bottom:1px solid var(--line-strong);box-shadow:0 20px 40px rgba(0,0,0,.6);visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s}
 .js .nav-links.open{visibility:visible;opacity:1;transform:none}
@@ -208,6 +221,7 @@ footer .logo{--logo-w:150px;--logo-h:40px}
 <ul class="nav-links" id="navLinks">
 <li><a href="#start">Start</a></li>
 <li><a href="#warum-siteforge">Warum SiteForge</a></li>
+<li><a href="#referenzen">Referenzen</a></li>
 <li><a href="#pakete">Pakete</a></li>
 <li><a href="#ablauf">Ablauf</a></li>
 <li><a href="#zahlungsarten">Zahlungsarten</a></li>
@@ -259,6 +273,48 @@ footer .logo{--logo-w:150px;--logo-h:40px}
 <article class="why-item"><div class="icon" aria-hidden="true"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3>Schnell &amp; sicher</h3><p>Auf schnelle Ladezeiten optimierter Code auf GitHub, veröffentlicht über Cloudflare Pages – mit Cloudflare-Schutz und optionaler eigener Domain.</p></article>
 <article class="why-item"><div class="icon" aria-hidden="true"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div><h3>Persönlicher Support</h3><p>Direkter Kontakt per E-Mail. Monatliche Updates sind je nach Paket fest eingeplant, Verbesserungsvorschläge jederzeit willkommen.</p></article>
 <article class="why-item"><div class="icon" aria-hidden="true"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3>Faire Pakete</h3><p>Entweder komplett betreut durch SiteForge (Starter &amp; Pro) oder mit vollem Code-Zugriff über eigene Accounts (Elite).</p></article>
+</div>
+</div>
+</section>
+
+<section id="referenzen">
+<div class="container">
+<div class="section-head reveal">
+<p class="eyebrow">Live-Referenzen</p>
+<h2>Bereits umgesetzte Websites</h2>
+<p>Echte Projekte, die mit sauberem HTML &amp; CSS entwickelt und über Cloudflare Pages veröffentlicht wurden.</p>
+</div>
+<div class="ref-grid">
+<article class="ref-card reveal">
+<div class="sc-bar" aria-hidden="true"><div class="dots"><i></i><i></i><i></i></div><div class="sc-url">schattenschreck.pages.dev</div></div>
+<div class="ref-body">
+<span class="ref-badge">Event &amp; Community</span>
+<h3>Schattenschreck</h3>
+<p class="ref-desc">Atmosphärische Event-Website für ein Halloween-Horror-Erlebnis in Wardersee – inklusive Live-Countdown, interaktiver Erlebnis-Vorschau, Besuchsinfos, FAQ-System und WhatsApp-Kanal-Anbindung.</p>
+<div class="ref-tags"><span>Live-Countdown</span><span>Event-Infos &amp; FAQ</span><span>Cloudflare Pages</span></div>
+<a href="https://schattenschreck.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block ref-link" aria-label="Website von Schattenschreck in neuem Tab öffnen">Live-Website ansehen <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+<article class="ref-card reveal">
+<div class="sc-bar" aria-hidden="true"><div class="dots"><i></i><i></i><i></i></div><div class="sc-url">kp25-webseite.pages.dev</div></div>
+<div class="ref-body">
+<span class="ref-badge">Bildung &amp; Klassenprojekt</span>
+<h3>KP25 Klassenprojekt</h3>
+<p class="ref-desc">Digitale Plattform für einen Kinderpflege-Jahrgang in Pößneck mit Echtzeit-Fortschrittsanzeige der Ausbildung, digitaler Klassen-Pinnwand und automatischem Schulferien-Countdown.</p>
+<div class="ref-tags"><span>Fortschritts-Tracker</span><span>Ferien-Countdown</span><span>Digitale Pinnwand</span></div>
+<a href="https://kp25-webseite.pages.dev/#start" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block ref-link" aria-label="Website vom KP25 Klassenprojekt in neuem Tab öffnen">Live-Website ansehen <span aria-hidden="true">↗</span></a>
+</div>
+</article>
+<article class="ref-card reveal">
+<div class="sc-bar" aria-hidden="true"><div class="dots"><i></i><i></i><i></i></div><div class="sc-url">sozial-aktiv.pages.dev</div></div>
+<div class="ref-body">
+<span class="ref-badge">Berufsorientierung &amp; Soziales</span>
+<h3>Sozial. Aktiv.</h3>
+<p class="ref-desc">Moderne Orientierungsplattform für soziale Berufe mit interaktivem 15-Fragen-Berufsquiz, Schulabschluss-Wegweiser, Berufsbild-Modals und direkten Anlaufstellen zu Hilfsorganisationen.</p>
+<div class="ref-tags"><span>Interaktives Quiz</span><span>Abschluss-Filter</span><span>Berufsbild-Modals</span></div>
+<a href="https://sozial-aktiv.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block ref-link" aria-label="Website von Sozial. Aktiv. in neuem Tab öffnen">Live-Website ansehen <span aria-hidden="true">↗</span></a>
+</div>
+</article>
 </div>
 </div>
 </section>
