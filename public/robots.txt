@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://siteforge-hosting.pages.dev/sitemap.xml

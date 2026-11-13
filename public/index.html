@@ -2,497 +2,354 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#06080d">
-<title>SiteForge — Individuelle Websites, professionell erstellt &amp; gehostet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SiteForge – Individuelle Websites, professionell erstellt &amp; gehostet</title>
 <meta name="description" content="SiteForge erstellt, hostet und pflegt mobil optimierte HTML- &amp; CSS-Websites für Projekte, Communities, Vereine und kleine Unternehmen – Code auf GitHub, Hosting über Cloudflare Pages.">
-<style>
-:root{
---bg:#06080d;--surface:#0b0f17;--elev:#101622;--hover:#151d2c;--card:#0d121c;
---line:rgba(255,255,255,.09);--line-strong:rgba(255,255,255,.16);--line-active:rgba(56,189,248,.5);
---accent:#38bdf8;--accent-dark:#0284c7;--accent-soft:rgba(56,189,248,.1);
---text:#f8fafc;--muted:#a3b1c4;--dim:#8fa0b6;
---sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
---mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
---header-h:68px;--logo-h:48px;--logo-w:190px;--logo-zoom:1.5;
---gap:clamp(56px,8vw,96px);--pad:clamp(16px,4vw,28px)}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 16px);-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;
-background-image:linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);background-size:48px 48px}
-h1,h2,h3{color:#fff;font-weight:700;letter-spacing:-.02em;line-height:1.2;overflow-wrap:break-word;hyphens:auto}
-p{color:var(--muted);overflow-wrap:break-word}
-a{color:inherit;text-decoration:none}
-img{max-width:100%}
-code{font-family:var(--mono);font-size:.9em;color:var(--accent);overflow-wrap:anywhere}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-.container{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
-section{padding:var(--gap) 0}
-main:focus,section:focus{outline:none}
-.skip-link{position:fixed;top:10px;left:10px;z-index:2000;background:var(--accent);color:#06080d;font-weight:700;padding:10px 16px;border-radius:8px;transform:translateY(-200%);transition:transform .2s}
-.skip-link:focus{transform:none;outline:2px solid #fff}
-.eyebrow{font-size:.85rem;font-weight:600;color:var(--accent);margin-bottom:8px}
-.section-head{max-width:640px;margin:0 auto 44px;text-align:center}
-.section-head.left{margin:0 0 40px;text-align:left}
-.section-head h2{font-size:clamp(1.7rem,3.4vw,2.35rem);margin-bottom:12px}
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#06080d">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://siteforge-hosting.pages.dev/">
 
-/* Buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:10px;font:600 .95rem/1.3 var(--sans);text-align:center;cursor:pointer;border:1px solid transparent;transition:background-color .2s,border-color .2s,box-shadow .2s,transform .2s}
-.btn-primary{background:linear-gradient(135deg,#38bdf8,#0284c7);color:#06080d;box-shadow:0 4px 18px rgba(56,189,248,.22)}
-.btn-primary:hover{box-shadow:0 6px 24px rgba(56,189,248,.35);filter:brightness(1.08)}
-.btn-secondary{background:var(--elev);color:var(--text);border-color:var(--line-strong)}
-.btn-secondary:hover{background:var(--hover);border-color:var(--line-active)}
-.btn-block{width:100%}
-@media(hover:hover){.btn:hover{transform:translateY(-2px)}}
+<!-- Social-Media-Vorschau -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:site_name" content="SiteForge">
+<meta property="og:title" content="SiteForge – Individuelle Websites, professionell erstellt &amp; gehostet">
+<meta property="og:description" content="Moderne, mobil optimierte Websites für Projekte, Communities, Vereine und kleine Unternehmen – inklusive Hosting und persönlicher Pflege.">
+<meta property="og:url" content="https://siteforge-hosting.pages.dev/">
+<meta property="og:image" content="https://siteforge-hosting.pages.dev/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="SiteForge – Websites &amp; More">
+<meta name="twitter:card" content="summary_large_image">
 
-/* Header */
-header{position:sticky;top:0;z-index:1000;background:rgba(6,8,13,.94);border-bottom:1px solid var(--line)}
-@supports(backdrop-filter:blur(1px)){header{background:rgba(6,8,13,.82);backdrop-filter:blur(14px)}}
-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:var(--header-h)}
-.logo{display:block;flex-shrink:0;width:var(--logo-w);height:var(--logo-h);overflow:hidden;border-radius:8px}
-.logo img{display:block;width:100%;height:100%;object-fit:contain;object-position:left center;transform:scale(var(--logo-zoom));transform-origin:left center}
-.nav-links{display:flex;align-items:center;gap:18px;list-style:none}
-.nav-links a:not(.btn){color:var(--muted);font-size:.93rem;font-weight:500;padding:8px 2px;white-space:nowrap;transition:color .2s}
-.nav-links a:not(.btn):hover{color:var(--accent)}
-.nav-links .btn{min-height:42px;padding:8px 18px;font-size:.88rem}
-.burger{display:none;width:44px;height:44px;align-items:center;justify-content:center;background:none;border:1px solid var(--line);border-radius:10px;cursor:pointer;flex-shrink:0}
-.burger-box{display:flex;flex-direction:column;justify-content:space-between;width:20px;height:14px}
-.burger-box span{height:2px;background:var(--text);border-radius:2px;transition:transform .2s,opacity .2s}
-.burger.active .burger-box span:nth-child(1){transform:translateY(6px) rotate(45deg)}
-.burger.active .burger-box span:nth-child(2){opacity:0}
-.burger.active .burger-box span:nth-child(3){transform:translateY(-6px) rotate(-45deg)}
-
-/* Hero */
-.hero{padding:clamp(40px,7vw,80px) 0 var(--gap);border-bottom:1px solid var(--line)}
-.hero-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(32px,5vw,56px);align-items:center}
-.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
-.tag{background:var(--surface);border:1px solid var(--line);padding:5px 12px;border-radius:30px;font-size:.8rem;color:var(--accent)}
-.hero h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;margin-bottom:20px}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.lead{font-size:1.1rem;color:var(--text);max-width:34em;margin-bottom:12px}
-.hero p.sub{max-width:34em;margin-bottom:28px}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.showcase{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;overflow:hidden;box-shadow:0 24px 48px rgba(0,0,0,.4);min-width:0}
-.sc-bar{display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(0,0,0,.4);border-bottom:1px solid var(--line)}
-.dots{display:flex;gap:6px}
-.dots i{width:9px;height:9px;border-radius:50%;background:#ef4444}
-.dots i:nth-child(2){background:#f59e0b}.dots i:nth-child(3){background:#10b981}
-.sc-url{flex:1;min-width:0;font:.74rem var(--mono);color:var(--dim);background:rgba(255,255,255,.04);padding:3px 10px;border-radius:6px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.sc-body{padding:20px;background:linear-gradient(160deg,#101726,#0b1019)}
-.sc-body strong{display:block;color:#fff;font-size:1.02rem;line-height:1.3;margin-bottom:6px}
-.sc-body p{font-size:.85rem;margin-bottom:14px}
-.sc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.sc-grid div{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:8px;padding:9px;font-size:.74rem;color:var(--dim)}
-.sc-grid b{display:block;color:var(--text);font-size:.78rem}
-.code{padding:14px 18px;background:#090d14;font:.78rem/1.7 var(--mono);color:var(--muted);overflow-x:auto;white-space:pre}
-.k{color:#f472b6}.e{color:#38bdf8}.s{color:#34d399}
-
-/* Warum */
-.why{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.why-item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;min-width:0}
-.icon{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:var(--accent-soft);border:1px solid rgba(56,189,248,.22);color:var(--accent);margin-bottom:14px}
-.why-item h3{font-size:1.15rem;margin-bottom:8px}
-
-/* Pakete */
-.packages{background:radial-gradient(circle at 50% 30%,rgba(16,26,44,.6),transparent 70%);border-block:1px solid var(--line)}
-.pkg-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
-.pkg{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;padding:32px 26px;display:flex;flex-direction:column;position:relative;min-width:0}
-.pkg.featured{border:2px solid var(--accent);background:linear-gradient(180deg,rgba(56,189,248,.09),var(--card) 40%);box-shadow:0 14px 36px rgba(0,0,0,.45)}
-.badge{position:absolute;top:-13px;left:16px;background:var(--accent);color:#06080d;font-size:.76rem;font-weight:800;padding:4px 14px;border-radius:30px}
-.pkg-label{font-size:.82rem;color:var(--accent);margin-bottom:2px}
-.pkg h3{font-size:1.5rem;margin-bottom:8px}
-.pkg-desc{font-size:.93rem;margin-bottom:18px;min-height:3.2em}
-.price{padding-bottom:16px;margin-bottom:20px;border-bottom:1px solid var(--line);font-size:1.5rem;font-weight:800;color:#fff}
-.price span{display:block;font-size:.85rem;font-weight:500;color:var(--dim)}
-.pkg ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:26px;flex-grow:1}
-.pkg li{display:flex;gap:10px;font-size:.92rem;line-height:1.5}
-.pkg li::before{content:"";flex:0 0 16px;height:16px;margin-top:3px;background:var(--accent);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E") center/contain no-repeat}
-.note{margin-top:28px;padding:16px 22px;background:var(--surface);border:1px solid var(--line);border-radius:12px;font-size:.9rem;text-align:center}
-
-/* Ablauf */
-.steps{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;border-top:1px solid var(--line-strong);padding-top:28px}
-.step-num{display:inline-block;font:700 .82rem var(--mono);color:var(--accent);background:var(--accent-soft);border:1px solid rgba(56,189,248,.25);padding:3px 10px;border-radius:6px;margin-bottom:12px}
-.steps h3{font-size:1.1rem;margin-bottom:8px}
-.steps p{font-size:.93rem}
-
-/* Zahlung */
-.pay{background:rgba(11,15,23,.5)}
-.pay-panel{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;overflow:hidden}
-.pay-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
-.pay-item{display:flex;gap:16px;padding:26px 24px;border-right:1px solid var(--line);min-width:0}
-.pay-item:last-child{border-right:0}
-.pay-item .icon{flex-shrink:0;margin:0}
-.pay-item h3{font-size:1.08rem;margin-bottom:4px}
-.pay-item p{font-size:.92rem}
-.pay-note{padding:14px 20px;text-align:center;font-size:.92rem;color:var(--accent);background:rgba(56,189,248,.05);border-top:1px solid var(--line)}
-
-/* FAQ */
-.faq{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-.faq details{background:var(--card);border:1px solid var(--line);border-radius:12px}
-.faq details[open]{border-color:var(--line-active)}
-.faq summary{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px;padding:16px 22px;font-weight:600;font-size:1.02rem;cursor:pointer;list-style:none;border-radius:12px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"";flex:0 0 10px;height:10px;border:solid var(--muted);border-width:0 2px 2px 0;transform:rotate(45deg);margin-top:-4px;transition:transform .2s}
-.faq details[open] summary::after{transform:rotate(-135deg);margin-top:4px;border-color:var(--accent)}
-.faq .answer{padding:0 22px 20px;color:var(--muted);font-size:.95rem}
-
-/* Kontakt */
-.cta{background:linear-gradient(135deg,#0d131f,#121c2d);border:1px solid var(--line-strong);border-radius:20px;padding:clamp(36px,6vw,60px) clamp(18px,4vw,32px);text-align:center;box-shadow:0 24px 48px rgba(0,0,0,.4)}
-.cta h2{font-size:clamp(1.7rem,3.4vw,2.4rem);margin-bottom:12px}
-.cta p{max-width:34em;margin:0 auto 26px;font-size:1.05rem}
-.cta .btn{padding:14px 30px;font-size:1.02rem}
-.contact-alt{margin-top:22px;display:flex;flex-direction:column;align-items:center;gap:10px}
-.contact-row{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px;max-width:100%}
-.email{font:.95rem var(--mono);color:var(--accent);padding:10px 14px;border-radius:8px;background:rgba(56,189,248,.07);border:1px solid rgba(56,189,248,.25);overflow-wrap:anywhere;min-height:44px;display:inline-flex;align-items:center}
-.email:hover{background:rgba(56,189,248,.14)}
-.btn-copy{min-height:44px;padding:8px 16px;border-radius:8px;background:var(--elev);color:var(--text);border:1px solid var(--line-strong);font:500 .88rem var(--sans);cursor:pointer}
-.btn-copy:hover{background:var(--hover);border-color:var(--line-active)}
-.btn-copy[hidden]{display:none}
-.status{min-height:1.4em;font-size:.88rem;color:#34d399}
-
-footer{border-top:1px solid var(--line);padding:40px 0;text-align:center}
-.footer-inner{display:flex;flex-direction:column;align-items:center;gap:12px}
-footer .logo{--logo-h:44px;--logo-w:170px}
-footer .logo img{object-position:center;transform-origin:center}
-footer p{font-size:.9rem}
-
-/* Scroll-Reveal (nur mit JS) */
-@media(prefers-reduced-motion:no-preference){
-.reveal-ready .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
-.reveal-ready .reveal.in{opacity:1;transform:none}}
-
-/* Referenzen */
-.ref-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;align-items:stretch}
-.ref-card{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:border-color .2s,transform .2s,box-shadow .2s}
-@media(hover:hover){.ref-card:hover{border-color:var(--line-active);transform:translateY(-3px);box-shadow:0 16px 36px rgba(0,0,0,.4)}}
-.ref-body{padding:24px;display:flex;flex-direction:column;flex-grow:1}
-.ref-badge{align-self:flex-start;font-size:.76rem;font-weight:600;color:var(--accent);background:var(--accent-soft);border:1px solid rgba(56,189,248,.22);padding:3px 10px;border-radius:20px;margin-bottom:12px}
-.ref-card h3{font-size:1.3rem;margin-bottom:8px}
-.ref-desc{font-size:.92rem;margin-bottom:18px;flex-grow:1}
-.ref-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
-.ref-tags span{font:.75rem var(--mono);color:var(--dim);background:var(--surface);border:1px solid var(--line);padding:4px 9px;border-radius:6px}
-.ref-link{gap:8px}
-
-/* Breakpoints */
-@media(min-width:1500px){:root{--header-h:76px;--logo-h:56px;--logo-w:220px}.container{max-width:1240px}}
-@media(max-width:1060px){
-:root{--header-h:64px}
-.ref-grid{grid-template-columns:minmax(0,1fr);max-width:520px;margin:0 auto}
-.js .burger{display:inline-flex}
-.js .nav-links{position:fixed;top:var(--header-h);left:0;right:0;max-height:calc(100vh - var(--header-h));max-height:calc(100dvh - var(--header-h));overflow-y:auto;flex-direction:column;align-items:stretch;gap:6px;padding:18px var(--pad) 28px;background:rgba(6,8,13,.98);border-bottom:1px solid var(--line-strong);box-shadow:0 20px 40px rgba(0,0,0,.6);visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity .2s,transform .2s,visibility .2s}
-.js .nav-links.open{visibility:visible;opacity:1;transform:none}
-.js .nav-links a:not(.btn){display:block;padding:13px 12px;font-size:1.02rem;color:var(--text);border-radius:8px}
-.js .nav-links .btn{margin-top:8px;min-height:48px}
-html:not(.js) nav{height:auto;flex-direction:column;align-items:flex-start;padding:12px 0}
-html:not(.js) .nav-links{flex-wrap:wrap;gap:4px 16px}
-html:not(.js) header{position:relative}
-.hero-grid{grid-template-columns:minmax(0,1fr)}
-.pkg-grid{grid-template-columns:minmax(0,1fr);max-width:520px;margin:0 auto}
-.steps{grid-template-columns:repeat(2,minmax(0,1fr))}
-.pay-grid{grid-template-columns:minmax(0,1fr)}
-.pay-item{border-right:0;border-bottom:1px solid var(--line)}
-.pay-item:last-child{border-bottom:0}}
-@media(max-width:720px){
-.why{grid-template-columns:minmax(0,1fr)}
-.sc-grid{grid-template-columns:minmax(0,1fr)}
-.why-item{padding:22px}}
-@media(max-width:560px){
-:root{--logo-h:42px;--logo-w:156px}
-footer .logo{--logo-w:150px;--logo-h:40px}
-.steps{grid-template-columns:minmax(0,1fr)}
-.actions .btn{width:100%}
-.pkg{padding:26px 20px}
-.pay-item{padding:20px 18px}
-.faq summary{padding:14px 16px;font-size:.98rem}
-.faq .answer{padding:0 16px 16px}
-.sc-bar .sc-url{font-size:.7rem}}
-@media(max-width:360px){:root{--logo-h:38px;--logo-w:136px}.pay-item{flex-direction:column;gap:10px}.price{font-size:1.35rem}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition-duration:.01ms!important;animation-duration:.01ms!important}.btn:hover{transform:none}}
-</style>
+<link rel="icon" href="/assets/img/logo-mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/style.css">
 <script>document.documentElement.classList.add('js')</script>
+<script src="/assets/js/main.js" defer></script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "SiteForge",
+  "description": "Individuelle, mobil optimierte HTML- & CSS-Websites inklusive Hosting über Cloudflare Pages und persönlicher Pflege.",
+  "url": "https://siteforge-hosting.pages.dev/",
+  "logo": "https://siteforge-hosting.pages.dev/assets/img/logo-mark.svg",
+  "image": "https://siteforge-hosting.pages.dev/assets/img/og-image.png",
+  "email": "direktanfragepaul@gmail.com",
+  "areaServed": "DE",
+  "knowsLanguage": "de",
+  "paymentAccepted": "PayPal, Banküberweisung, Ko-fi"
+}
+</script>
 </head>
 <body>
 <a href="#main-content" class="skip-link">Zum Inhalt springen</a>
 
-<header id="siteHeader">
-<div class="container">
-<nav aria-label="Hauptnavigation">
-<a href="#start" class="logo" aria-label="SiteForge – zur Startseite"><img src="https://i.ibb.co/xKZcf0mD/Dunkelgr-n-Grau-Retro-Schlicht-Social-Media-Agentur-Logo.png" alt="SiteForge – Websites &amp; More" width="340" height="104" loading="eager" decoding="async" fetchpriority="high"></a>
-<ul class="nav-links" id="navLinks">
-<li><a href="#start">Start</a></li>
-<li><a href="#warum-siteforge">Warum SiteForge</a></li>
-<li><a href="#referenzen">Referenzen</a></li>
-<li><a href="#pakete">Pakete</a></li>
-<li><a href="#ablauf">Ablauf</a></li>
-<li><a href="#zahlungsarten">Zahlungsarten</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#kontakt" class="btn btn-primary">Anfrage senden</a></li>
-</ul>
-<button class="burger" id="burgerBtn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks"><span class="burger-box" aria-hidden="true"><span></span><span></span><span></span></span></button>
-</nav>
-</div>
+<header class="site-header">
+  <div class="container">
+    <nav class="nav" aria-label="Hauptnavigation">
+      <a href="#start" class="logo" aria-label="SiteForge – zum Seitenanfang">
+        <img src="/assets/img/logo-mark.svg" alt="" width="38" height="38">
+        <span class="logo-text" aria-hidden="true">
+          <span class="logo-name">Site<span>Forge</span></span>
+          <span class="logo-tagline">Websites &amp; More</span>
+        </span>
+      </a>
+      <button class="burger" id="burgerBtn" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navLinks">
+        <span class="burger-box" aria-hidden="true"><span></span><span></span><span></span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#warum-siteforge">Warum SiteForge</a></li>
+        <li><a href="#referenzen">Referenzen</a></li>
+        <li><a href="#pakete">Pakete</a></li>
+        <li><a href="#ablauf">Ablauf</a></li>
+        <li><a href="#zahlungsarten">Zahlungsarten</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt" class="btn btn-primary">Anfrage senden</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <main id="main-content" tabindex="-1">
-<section id="start" class="hero">
-<div class="container hero-grid">
-<div>
-<div class="tags"><span class="tag">HTML &amp; CSS</span><span class="tag">Code auf GitHub</span><span class="tag">Cloudflare Pages</span><span class="tag">Mobil optimiert</span></div>
-<h1>Deine Website. <em>Professionell. Online.</em></h1>
-<p class="lead">SiteForge erstellt moderne, mobile Websites für Projekte, Communities, Vereine und kleine Unternehmen.</p>
-<p class="sub">Keine überladene Standardseite, sondern eine klare, schnelle und individuell gestaltete Website – inklusive Einrichtung, zuverlässigem Hosting und persönlicher Pflege.</p>
-<div class="actions">
-<a href="#pakete" class="btn btn-primary">Pakete ansehen</a>
-<a href="mailto:direktanfragepaul@gmail.com?subject=Website-Anfrage%20%C3%BCber%20SiteForge&amp;body=Hallo%20SiteForge-Team,%0D%0A%0D%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Website.%0D%0A%0D%0AGew%C3%BCnschtes%20Paket:%20%5BStarter%20/%20Pro%20/%20Elite%5D%0D%0AProjektbeschreibung:%20%0D%0AGew%C3%BCnschte%20Inhalte:%20%0D%0ATexte,%20Bilder%20oder%20Logo%20vorhanden%20(Ja/Nein):%20%0D%0A%0D%0AViele%20Gr%C3%BC%C3%9Fe" class="btn btn-secondary">Anfrage senden</a>
-</div>
-</div>
-<div class="showcase" aria-hidden="true">
-<div class="sc-bar"><div class="dots"><i></i><i></i><i></i></div><div class="sc-url">dein-projekt.pages.dev</div></div>
-<div class="sc-body">
-<strong>Klar strukturierter Web-Auftritt für deine Community oder dein Vorhaben</strong>
-<p>Maßgeschneidert in HTML &amp; CSS, versioniert auf GitHub und ausgeliefert über Cloudflare Pages.</p>
-<div class="sc-grid"><div><b>Architektur</b>Sauberer Code</div><div><b>Auslieferung</b>Cloudflare Pages</div><div><b>Betreuung</b>Feste Updates</div></div>
-</div>
-<div class="code"><span class="k">&lt;!DOCTYPE html&gt;</span>
+
+  <!-- Hero -->
+  <section id="start" class="hero" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div>
+        <ul class="tags" aria-label="Schwerpunkte">
+          <li class="tag">HTML &amp; CSS</li>
+          <li class="tag">Code auf GitHub</li>
+          <li class="tag">Cloudflare Pages</li>
+          <li class="tag">Mobil optimiert</li>
+        </ul>
+        <h1 id="hero-title">Deine Website. <em>Professionell. Online.</em></h1>
+        <p class="lead">SiteForge erstellt moderne, mobile Websites für Projekte, Communities, Vereine und kleine Unternehmen.</p>
+        <p class="sub">Keine überladene Standardseite, sondern eine klare, schnelle und individuell gestaltete Website – inklusive Einrichtung, zuverlässigem Hosting und persönlicher Pflege.</p>
+        <div class="actions">
+          <a href="#pakete" class="btn btn-primary">Pakete ansehen</a>
+          <a href="mailto:direktanfragepaul@gmail.com?subject=Website-Anfrage%20%C3%BCber%20SiteForge&amp;body=Hallo%20SiteForge-Team,%0D%0A%0D%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Website.%0D%0A%0D%0AGew%C3%BCnschtes%20Paket:%20%5BStarter%20/%20Pro%20/%20Elite%5D%0D%0AProjektbeschreibung:%20%0D%0AGew%C3%BCnschte%20Inhalte:%20%0D%0ATexte,%20Bilder%20oder%20Logo%20vorhanden%20(Ja/Nein):%20%0D%0A%0D%0AViele%20Gr%C3%BC%C3%9Fe" class="btn btn-secondary">Anfrage senden</a>
+        </div>
+      </div>
+
+      <div class="showcase" aria-hidden="true">
+        <div class="browser-bar"><div class="dots"><i></i><i></i><i></i></div><div class="browser-url">dein-projekt.pages.dev</div></div>
+        <div class="showcase-body">
+          <strong>Klar strukturierter Web-Auftritt für deine Community oder dein Vorhaben</strong>
+          <p>Maßgeschneidert in HTML &amp; CSS, versioniert auf GitHub und ausgeliefert über Cloudflare Pages.</p>
+          <div class="showcase-grid">
+            <div><b>Architektur</b>Sauberer Code</div>
+            <div><b>Auslieferung</b>Cloudflare Pages</div>
+            <div><b>Betreuung</b>Feste Updates</div>
+          </div>
+        </div>
+        <div class="code"><span class="k">&lt;!DOCTYPE html&gt;</span>
 <span class="e">&lt;section</span> class=<span class="s">"custom-layout"</span><span class="e">&gt;</span>
   <span class="e">&lt;h1&gt;</span>Individuell erstellt<span class="e">&lt;/h1&gt;</span>
 <span class="e">&lt;/section&gt;</span></div>
-</div>
-</div>
-</section>
+      </div>
+    </div>
+  </section>
 
-<section id="warum-siteforge">
-<div class="container">
-<div class="section-head left reveal">
-<p class="eyebrow">Warum SiteForge</p>
-<h2>Keine Baukasten-Kompromisse</h2>
-<p>Du bekommst eine technisch saubere Website und einen festen Ansprechpartner für Aufbau, Betrieb und Pflege.</p>
-</div>
-<div class="why reveal">
-<article class="why-item"><div class="icon" aria-hidden="true"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div><h3>Modernes Design</h3><p>Individuell in HTML und CSS entwickelt, abgestimmt auf dein Projekt, deinen Verein oder deine Community – für PC, Tablet und Smartphone.</p></article>
-<article class="why-item"><div class="icon" aria-hidden="true"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3>Schnell &amp; sicher</h3><p>Auf schnelle Ladezeiten optimierter Code auf GitHub, veröffentlicht über Cloudflare Pages – mit Cloudflare-Schutz und optionaler eigener Domain.</p></article>
-<article class="why-item"><div class="icon" aria-hidden="true"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div><h3>Persönlicher Support</h3><p>Direkter Kontakt per E-Mail. Monatliche Updates sind je nach Paket fest eingeplant, Verbesserungsvorschläge jederzeit willkommen.</p></article>
-<article class="why-item"><div class="icon" aria-hidden="true"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div><h3>Faire Pakete</h3><p>Entweder komplett betreut durch SiteForge (Starter &amp; Pro) oder mit vollem Code-Zugriff über eigene Accounts (Elite).</p></article>
-</div>
-</div>
-</section>
+  <!-- Warum SiteForge -->
+  <section id="warum-siteforge" aria-labelledby="why-title">
+    <div class="container">
+      <div class="section-head left reveal">
+        <p class="eyebrow">Warum SiteForge</p>
+        <h2 id="why-title">Keine Baukasten-Kompromisse</h2>
+        <p>Du bekommst eine technisch saubere Website und einen festen Ansprechpartner für Aufbau, Betrieb und Pflege.</p>
+      </div>
+      <div class="why reveal">
+        <article class="why-item">
+          <div class="icon" aria-hidden="true"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+          <h3>Modernes Design</h3>
+          <p>Individuell in HTML und CSS entwickelt, abgestimmt auf dein Projekt, deinen Verein oder deine Community – für PC, Tablet und Smartphone.</p>
+        </article>
+        <article class="why-item">
+          <div class="icon" aria-hidden="true"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+          <h3>Schnell &amp; sicher</h3>
+          <p>Auf schnelle Ladezeiten optimierter Code auf GitHub, veröffentlicht über Cloudflare Pages – mit Cloudflare-Schutz und optionaler eigener Domain.</p>
+        </article>
+        <article class="why-item">
+          <div class="icon" aria-hidden="true"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div>
+          <h3>Persönlicher Support</h3>
+          <p>Direkter Kontakt per E-Mail. Monatliche Updates sind je nach Paket fest eingeplant, Verbesserungsvorschläge jederzeit willkommen.</p>
+        </article>
+        <article class="why-item">
+          <div class="icon" aria-hidden="true"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h3>Faire Pakete</h3>
+          <p>Entweder komplett betreut durch SiteForge (Starter &amp; Pro) oder mit vollem Code-Zugriff über eigene Accounts (Elite).</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<section id="referenzen">
-<div class="container">
-<div class="section-head reveal">
-<p class="eyebrow">Live-Referenzen</p>
-<h2>Bereits umgesetzte Websites</h2>
-<p>Echte Projekte, die mit sauberem HTML &amp; CSS entwickelt und über Cloudflare Pages veröffentlicht wurden.</p>
-</div>
-<div class="ref-grid">
-<article class="ref-card reveal">
-<div class="sc-bar" aria-hidden="true"><div class="dots"><i></i><i></i><i></i></div><div class="sc-url">schattenschreck.pages.dev</div></div>
-<div class="ref-body">
-<span class="ref-badge">Event &amp; Community</span>
-<h3>Schattenschreck</h3>
-<p class="ref-desc">Atmosphärische Event-Website für ein Halloween-Horror-Erlebnis in Wardersee – inklusive Live-Countdown, interaktiver Erlebnis-Vorschau, Besuchsinfos, FAQ-System und WhatsApp-Kanal-Anbindung.</p>
-<div class="ref-tags"><span>Live-Countdown</span><span>Event-Infos &amp; FAQ</span><span>Cloudflare Pages</span></div>
-<a href="https://schattenschreck.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block ref-link" aria-label="Website von Schattenschreck in neuem Tab öffnen">Live-Website ansehen <span aria-hidden="true">↗</span></a>
-</div>
-</article>
-<article class="ref-card reveal">
-<div class="sc-bar" aria-hidden="true"><div class="dots"><i></i><i></i><i></i></div><div class="sc-url">kp25-webseite.pages.dev</div></div>
-<div class="ref-body">
-<span class="ref-badge">Bildung &amp; Klassenprojekt</span>
-<h3>KP25 Klassenprojekt</h3>
-<p class="ref-desc">Digitale Plattform für einen Kinderpflege-Jahrgang in Pößneck mit Echtzeit-Fortschrittsanzeige der Ausbildung, digitaler Klassen-Pinnwand und automatischem Schulferien-Countdown.</p>
-<div class="ref-tags"><span>Fortschritts-Tracker</span><span>Ferien-Countdown</span><span>Digitale Pinnwand</span></div>
-<a href="https://kp25-webseite.pages.dev/#start" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block ref-link" aria-label="Website vom KP25 Klassenprojekt in neuem Tab öffnen">Live-Website ansehen <span aria-hidden="true">↗</span></a>
-</div>
-</article>
-<article class="ref-card reveal">
-<div class="sc-bar" aria-hidden="true"><div class="dots"><i></i><i></i><i></i></div><div class="sc-url">sozial-aktiv.pages.dev</div></div>
-<div class="ref-body">
-<span class="ref-badge">Berufsorientierung &amp; Soziales</span>
-<h3>Sozial. Aktiv.</h3>
-<p class="ref-desc">Moderne Orientierungsplattform für soziale Berufe mit interaktivem 15-Fragen-Berufsquiz, Schulabschluss-Wegweiser, Berufsbild-Modals und direkten Anlaufstellen zu Hilfsorganisationen.</p>
-<div class="ref-tags"><span>Interaktives Quiz</span><span>Abschluss-Filter</span><span>Berufsbild-Modals</span></div>
-<a href="https://sozial-aktiv.pages.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-block ref-link" aria-label="Website von Sozial. Aktiv. in neuem Tab öffnen">Live-Website ansehen <span aria-hidden="true">↗</span></a>
-</div>
-</article>
-</div>
-</div>
-</section>
+  <!-- Referenzen -->
+  <section id="referenzen" aria-labelledby="ref-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Live-Referenzen</p>
+        <h2 id="ref-title">Bereits umgesetzte Websites</h2>
+        <p>Echte Projekte, die mit sauberem HTML &amp; CSS entwickelt und über Cloudflare Pages veröffentlicht wurden.</p>
+      </div>
+      <div class="ref-grid">
+        <article class="ref-card reveal">
+          <div class="browser-bar" aria-hidden="true"><div class="dots"><i></i><i></i><i></i></div><div class="browser-url">schattenschreck.pages.dev</div></div>
+          <div class="ref-body">
+            <span class="ref-badge">Event &amp; Community</span>
+            <h3>Schattenschreck</h3>
+            <p class="ref-desc">Atmosphärische Event-Website für ein Halloween-Horror-Erlebnis in Wardersee – inklusive Live-Countdown, interaktiver Erlebnis-Vorschau, Besuchsinfos, FAQ-System und WhatsApp-Kanal-Anbindung.</p>
+            <ul class="ref-tags" aria-label="Funktionen"><li>Live-Countdown</li><li>Event-Infos &amp; FAQ</li><li>Cloudflare Pages</li></ul>
+            <a href="https://schattenschreck.pages.dev/" target="_blank" rel="noopener" class="btn btn-secondary btn-block">Live-Website ansehen<span class="visually-hidden"> (Schattenschreck, öffnet in neuem Tab)</span> <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="ref-card reveal">
+          <div class="browser-bar" aria-hidden="true"><div class="dots"><i></i><i></i><i></i></div><div class="browser-url">kp25-webseite.pages.dev</div></div>
+          <div class="ref-body">
+            <span class="ref-badge">Bildung &amp; Klassenprojekt</span>
+            <h3>KP25 Klassenprojekt</h3>
+            <p class="ref-desc">Digitale Plattform für einen Kinderpflege-Jahrgang in Pößneck mit Echtzeit-Fortschrittsanzeige der Ausbildung, digitaler Klassen-Pinnwand und automatischem Schulferien-Countdown.</p>
+            <ul class="ref-tags" aria-label="Funktionen"><li>Fortschritts-Tracker</li><li>Ferien-Countdown</li><li>Digitale Pinnwand</li></ul>
+            <a href="https://kp25-webseite.pages.dev/" target="_blank" rel="noopener" class="btn btn-secondary btn-block">Live-Website ansehen<span class="visually-hidden"> (KP25 Klassenprojekt, öffnet in neuem Tab)</span> <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="ref-card reveal">
+          <div class="browser-bar" aria-hidden="true"><div class="dots"><i></i><i></i><i></i></div><div class="browser-url">sozial-aktiv.pages.dev</div></div>
+          <div class="ref-body">
+            <span class="ref-badge">Berufsorientierung &amp; Soziales</span>
+            <h3>Sozial. Aktiv.</h3>
+            <p class="ref-desc">Moderne Orientierungsplattform für soziale Berufe mit interaktivem 15-Fragen-Berufsquiz, Schulabschluss-Wegweiser, Berufsbild-Modals und direkten Anlaufstellen zu Hilfsorganisationen.</p>
+            <ul class="ref-tags" aria-label="Funktionen"><li>Interaktives Quiz</li><li>Abschluss-Filter</li><li>Berufsbild-Modals</li></ul>
+            <a href="https://sozial-aktiv.pages.dev/" target="_blank" rel="noopener" class="btn btn-secondary btn-block">Live-Website ansehen<span class="visually-hidden"> (Sozial. Aktiv., öffnet in neuem Tab)</span> <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<section id="pakete" class="packages">
-<div class="container">
-<div class="section-head reveal">
-<p class="eyebrow">Leistungsumfang</p>
-<h2>Die passenden Pakete</h2>
-<p>Alle Pakete enthalten eine mobil optimierte Website, Cloudflare-Schutz und persönlichen Support. Die Kosten richten sich nach Umfang, Design und gewünschten Funktionen.</p>
-</div>
-<div class="pkg-grid">
-<article class="pkg reveal">
-<p class="pkg-label">Paket 1</p><h3>Starter</h3>
-<p class="pkg-desc">Für den ersten Auftritt – komplett durch SiteForge betreut.</p>
-<div class="price">Auf Anfrage<span>Individuelles Projektangebot</span></div>
-<ul>
-<li>Moderner Onepager mit Menü</li>
-<li>Individuelles Design für Handy und PC</li>
-<li>Code auf GitHub &amp; Veröffentlichung über Cloudflare Pages im SiteForge-Account</li>
-<li>Cloudflare-Schutz &amp; Kontaktbereich mit externen Links</li>
-<li>3 Updates pro Monat durch SiteForge (keine eigene Direktbearbeitung)</li>
-<li>Verbesserungsvorschläge jederzeit willkommen</li>
-</ul>
-<a href="mailto:direktanfragepaul@gmail.com?subject=Website-Anfrage%20%C3%BCber%20SiteForge%20(Starter)&amp;body=Hallo%20SiteForge-Team,%0D%0A%0D%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Starter-Paket.%0D%0A%0D%0AGew%C3%BCnschtes%20Paket:%20Starter%0D%0AProjektbeschreibung:%20%0D%0AGew%C3%BCnschte%20Inhalte:%20%0D%0ATexte,%20Bilder%20oder%20Logo%20vorhanden%20(Ja/Nein):%20%0D%0A%0D%0AViele%20Gr%C3%BC%C3%9Fe" class="btn btn-secondary btn-block">Starter anfragen</a>
-</article>
-<article class="pkg featured reveal">
-<span class="badge">Unsere Empfehlung</span>
-<p class="pkg-label">Paket 2</p><h3>Pro</h3>
-<p class="pkg-desc">Mehr Möglichkeiten und Flexibilität – als erweiterter Onepager ohne Unterseiten.</p>
-<div class="price">Auf Anfrage<span>Individuelles Projektangebot</span></div>
-<ul>
-<li><strong>Alles aus dem Starter-Paket</strong></li>
-<li>Erweitertes Onepager-Design &amp; zusätzliche individuelle Sektionen</li>
-<li>Galerie, FAQ, Bewertungs-Layout oder Social-Media-Bereich möglich</li>
-<li>Bessere Struktur für umfangreichere Inhalte</li>
-<li>Code auf GitHub &amp; Veröffentlichung über Cloudflare Pages im SiteForge-Account</li>
-<li>5 Updates pro Monat durch SiteForge (keine eigene Direktbearbeitung)</li>
-</ul>
-<a href="mailto:direktanfragepaul@gmail.com?subject=Website-Anfrage%20%C3%BCber%20SiteForge%20(Pro)&amp;body=Hallo%20SiteForge-Team,%0D%0A%0D%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Pro-Paket.%0D%0A%0D%0AGew%C3%BCnschtes%20Paket:%20Pro%0D%0AProjektbeschreibung:%20%0D%0AGew%C3%BCnschte%20Inhalte:%20%0D%0ATexte,%20Bilder%20oder%20Logo%20vorhanden%20(Ja/Nein):%20%0D%0A%0D%0AViele%20Gr%C3%BC%C3%9Fe" class="btn btn-primary btn-block">Pro anfragen</a>
-</article>
-<article class="pkg reveal">
-<p class="pkg-label">Paket 3</p><h3>Elite</h3>
-<p class="pkg-desc">Volle Kontrolle mit Unterseiten und eigenen Projekt-Accounts.</p>
-<div class="price">Auf Anfrage<span>Individuelles Projektangebot</span></div>
-<ul>
-<li>Eigene Website mit Unterseiten &amp; erweiterter Struktur</li>
-<li>Eigener projektbezogener GitHub-Account für den Website-Code</li>
-<li>Selbstständige Bearbeitung von HTML-/CSS-Code &amp; Inhalten über GitHub möglich</li>
-<li>Veröffentlichung über Cloudflare Pages &amp; Schutz im eigenen Kundenaccount</li>
-<li>7 Updates pro Monat durch SiteForge inklusive</li>
-</ul>
-<a href="mailto:direktanfragepaul@gmail.com?subject=Website-Anfrage%20%C3%BCber%20SiteForge%20(Elite)&amp;body=Hallo%20SiteForge-Team,%0D%0A%0D%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Elite-Paket.%0D%0A%0D%0AGew%C3%BCnschtes%20Paket:%20Elite%0D%0AProjektbeschreibung:%20%0D%0AGew%C3%BCnschte%20Inhalte:%20%0D%0ATexte,%20Bilder%20oder%20Logo%20vorhanden%20(Ja/Nein):%20%0D%0A%0D%0AViele%20Gr%C3%BC%C3%9Fe" class="btn btn-secondary btn-block">Elite anfragen</a>
-</article>
-</div>
-<p class="note reveal">Was als einzelnes monatliches Update zählt, wie größere Erweiterungen behandelt werden und wie sich einmalige und laufende Kosten zusammensetzen, klären wir vorab im individuellen Angebot.</p>
-</div>
-</section>
+  <!-- Pakete -->
+  <section id="pakete" class="packages" aria-labelledby="pkg-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Leistungsumfang</p>
+        <h2 id="pkg-title">Die passenden Pakete</h2>
+        <p>Alle Pakete enthalten eine mobil optimierte Website, Cloudflare-Schutz und persönlichen Support. Die Kosten richten sich nach Umfang, Design und gewünschten Funktionen.</p>
+      </div>
+      <div class="pkg-grid">
+        <article class="pkg reveal">
+          <p class="pkg-label">Paket 1</p>
+          <h3>Starter</h3>
+          <p class="pkg-desc">Für den ersten Auftritt – komplett durch SiteForge betreut.</p>
+          <p class="price">Auf Anfrage<span>Individuelles Projektangebot</span></p>
+          <ul>
+            <li>Moderner Onepager mit Menü</li>
+            <li>Individuelles Design für Handy und PC</li>
+            <li>Code auf GitHub &amp; Veröffentlichung über Cloudflare Pages im SiteForge-Account</li>
+            <li>Cloudflare-Schutz &amp; Kontaktbereich mit externen Links</li>
+            <li>3 Updates pro Monat durch SiteForge (keine eigene Direktbearbeitung)</li>
+            <li>Verbesserungsvorschläge jederzeit willkommen</li>
+          </ul>
+          <a href="mailto:direktanfragepaul@gmail.com?subject=Website-Anfrage%20%C3%BCber%20SiteForge%20(Starter)&amp;body=Hallo%20SiteForge-Team,%0D%0A%0D%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Starter-Paket.%0D%0A%0D%0AGew%C3%BCnschtes%20Paket:%20Starter%0D%0AProjektbeschreibung:%20%0D%0AGew%C3%BCnschte%20Inhalte:%20%0D%0ATexte,%20Bilder%20oder%20Logo%20vorhanden%20(Ja/Nein):%20%0D%0A%0D%0AViele%20Gr%C3%BC%C3%9Fe" class="btn btn-secondary btn-block">Starter anfragen</a>
+        </article>
+        <article class="pkg featured reveal">
+          <span class="badge">Unsere Empfehlung</span>
+          <p class="pkg-label">Paket 2</p>
+          <h3>Pro</h3>
+          <p class="pkg-desc">Mehr Möglichkeiten und Flexibilität – als erweiterter Onepager ohne Unterseiten.</p>
+          <p class="price">Auf Anfrage<span>Individuelles Projektangebot</span></p>
+          <ul>
+            <li><strong>Alles aus dem Starter-Paket</strong></li>
+            <li>Erweitertes Onepager-Design &amp; zusätzliche individuelle Sektionen</li>
+            <li>Galerie, FAQ, Bewertungs-Layout oder Social-Media-Bereich möglich</li>
+            <li>Bessere Struktur für umfangreichere Inhalte</li>
+            <li>Code auf GitHub &amp; Veröffentlichung über Cloudflare Pages im SiteForge-Account</li>
+            <li>5 Updates pro Monat durch SiteForge (keine eigene Direktbearbeitung)</li>
+          </ul>
+          <a href="mailto:direktanfragepaul@gmail.com?subject=Website-Anfrage%20%C3%BCber%20SiteForge%20(Pro)&amp;body=Hallo%20SiteForge-Team,%0D%0A%0D%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Pro-Paket.%0D%0A%0D%0AGew%C3%BCnschtes%20Paket:%20Pro%0D%0AProjektbeschreibung:%20%0D%0AGew%C3%BCnschte%20Inhalte:%20%0D%0ATexte,%20Bilder%20oder%20Logo%20vorhanden%20(Ja/Nein):%20%0D%0A%0D%0AViele%20Gr%C3%BC%C3%9Fe" class="btn btn-primary btn-block">Pro anfragen</a>
+        </article>
+        <article class="pkg reveal">
+          <p class="pkg-label">Paket 3</p>
+          <h3>Elite</h3>
+          <p class="pkg-desc">Volle Kontrolle mit Unterseiten und eigenen Projekt-Accounts.</p>
+          <p class="price">Auf Anfrage<span>Individuelles Projektangebot</span></p>
+          <ul>
+            <li>Eigene Website mit Unterseiten &amp; erweiterter Struktur</li>
+            <li>Eigener projektbezogener GitHub-Account für den Website-Code</li>
+            <li>Selbstständige Bearbeitung von HTML-/CSS-Code &amp; Inhalten über GitHub möglich</li>
+            <li>Veröffentlichung über Cloudflare Pages &amp; Schutz im eigenen Kundenaccount</li>
+            <li>7 Updates pro Monat durch SiteForge inklusive</li>
+          </ul>
+          <a href="mailto:direktanfragepaul@gmail.com?subject=Website-Anfrage%20%C3%BCber%20SiteForge%20(Elite)&amp;body=Hallo%20SiteForge-Team,%0D%0A%0D%0Aich%20interessiere%20mich%20f%C3%BCr%20das%20Elite-Paket.%0D%0A%0D%0AGew%C3%BCnschtes%20Paket:%20Elite%0D%0AProjektbeschreibung:%20%0D%0AGew%C3%BCnschte%20Inhalte:%20%0D%0ATexte,%20Bilder%20oder%20Logo%20vorhanden%20(Ja/Nein):%20%0D%0A%0D%0AViele%20Gr%C3%BC%C3%9Fe" class="btn btn-secondary btn-block">Elite anfragen</a>
+        </article>
+      </div>
+      <p class="note reveal">Was als einzelnes monatliches Update zählt, wie größere Erweiterungen behandelt werden und wie sich einmalige und laufende Kosten zusammensetzen, klären wir vorab im individuellen Angebot.</p>
+    </div>
+  </section>
 
-<section id="ablauf">
-<div class="container">
-<div class="section-head left reveal">
-<p class="eyebrow">Projektablauf</p>
-<h2>So läuft die Zusammenarbeit</h2>
-<p>In vier Schritten von deiner Idee zur fertigen Website.</p>
-</div>
-<ol class="steps reveal">
-<li><span class="step-num">Schritt 1</span><h3>Anfrage senden</h3><p>Du schickst mir per E-Mail dein gewünschtes Paket, eine kurze Projektbeschreibung und deine Ideen oder Materialien.</p></li>
-<li><span class="step-num">Schritt 2</span><h3>Individuelles Angebot</h3><p>Wir klären Aufbau, Designwünsche und den genauen Leistungsumfang. Danach erhältst du ein unverbindliches Angebot.</p></li>
-<li><span class="step-num">Schritt 3</span><h3>Umsetzung</h3><p>Ich entwickle deine Website individuell mit sauberem HTML und CSS – mobil optimiert und genau auf dein Vorhaben zugeschnitten.</p></li>
-<li><span class="step-num">Schritt 4</span><h3>Launch &amp; Updates</h3><p>Der Code wird auf GitHub bereitgestellt und über Cloudflare Pages (zunächst mit pages.dev-Adresse) veröffentlicht. Danach begleite ich dich mit monatlichen Updates.</p></li>
-</ol>
-</div>
-</section>
+  <!-- Ablauf -->
+  <section id="ablauf" aria-labelledby="steps-title">
+    <div class="container">
+      <div class="section-head left reveal">
+        <p class="eyebrow">Projektablauf</p>
+        <h2 id="steps-title">So läuft die Zusammenarbeit</h2>
+        <p>In vier Schritten von deiner Idee zur fertigen Website.</p>
+      </div>
+      <ol class="steps reveal">
+        <li><span class="step-num">Schritt 1</span><h3>Anfrage senden</h3><p>Du schickst mir per E-Mail dein gewünschtes Paket, eine kurze Projektbeschreibung und deine Ideen oder Materialien.</p></li>
+        <li><span class="step-num">Schritt 2</span><h3>Individuelles Angebot</h3><p>Wir klären Aufbau, Designwünsche und den genauen Leistungsumfang. Danach erhältst du ein unverbindliches Angebot.</p></li>
+        <li><span class="step-num">Schritt 3</span><h3>Umsetzung</h3><p>Ich entwickle deine Website individuell mit sauberem HTML und CSS – mobil optimiert und genau auf dein Vorhaben zugeschnitten.</p></li>
+        <li><span class="step-num">Schritt 4</span><h3>Launch &amp; Updates</h3><p>Der Code wird auf GitHub bereitgestellt und über Cloudflare Pages (zunächst mit pages.dev-Adresse) veröffentlicht. Danach begleite ich dich mit monatlichen Updates.</p></li>
+      </ol>
+    </div>
+  </section>
 
-<section id="zahlungsarten" class="pay">
-<div class="container">
-<div class="section-head reveal">
-<p class="eyebrow">Abrechnung</p>
-<h2>Zahlungsarten</h2>
-<p>Nach Absprache deines Projekts kannst du so bezahlen:</p>
-</div>
-<div class="pay-panel reveal">
-<div class="pay-grid">
-<div class="pay-item"><div class="icon" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg></div><div><h3>PayPal</h3><p>Schnell und unkompliziert per PayPal bezahlen.</p></div></div>
-<div class="pay-item"><div class="icon" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg></div><div><h3>Banküberweisung</h3><p>Klassisch per Überweisung nach individueller Vereinbarung.</p></div></div>
-<div class="pay-item"><div class="icon" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div><h3>Ko-fi</h3><p>Für Zahlungen per Kreditkarte und weitere Zahlungsmethoden.</p></div></div>
-</div>
-<p class="pay-note">Der Ko-fi-Link wird nach der Anfrage mitgeteilt.</p>
-</div>
-</div>
-</section>
+  <!-- Zahlungsarten -->
+  <section id="zahlungsarten" class="pay" aria-labelledby="pay-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Abrechnung</p>
+        <h2 id="pay-title">Zahlungsarten</h2>
+        <p>Nach Absprache deines Projekts kannst du so bezahlen:</p>
+      </div>
+      <div class="pay-panel reveal">
+        <div class="pay-grid">
+          <div class="pay-item">
+            <div class="icon" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg></div>
+            <div><h3>PayPal</h3><p>Schnell und unkompliziert per PayPal bezahlen.</p></div>
+          </div>
+          <div class="pay-item">
+            <div class="icon" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z"/></svg></div>
+            <div><h3>Banküberweisung</h3><p>Klassisch per Überweisung nach individueller Vereinbarung.</p></div>
+          </div>
+          <div class="pay-item">
+            <div class="icon" aria-hidden="true"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+            <div><h3>Ko-fi</h3><p>Für Zahlungen per Kreditkarte und weitere Zahlungsmethoden.</p></div>
+          </div>
+        </div>
+        <p class="pay-note">Der Ko-fi-Link wird nach der Anfrage mitgeteilt.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="faq">
-<div class="container">
-<div class="section-head reveal">
-<p class="eyebrow">Fragen &amp; Antworten</p>
-<h2>Häufig gestellte Fragen</h2>
-<p>Die wichtigsten Details im Überblick.</p>
-</div>
-<div class="faq reveal">
-<details><summary>Welche Adresse bekommt meine Website und ist eine eigene Domain möglich?</summary><div class="answer">Jede Website erhält zunächst eine kostenlose <code>pages.dev</code>-Adresse über Cloudflare Pages. Wenn du bereits eine eigene Domain besitzt oder nutzen möchtest, binden wir diese über Cloudflare an deine Website an.</div></details>
-<details><summary>Wie funktioniert das Hosting bei Starter, Pro und Elite?</summary><div class="answer">Alle Websites werden in HTML und CSS erstellt. Bei <strong>Starter</strong> und <strong>Pro</strong> liegt der Code auf dem GitHub-Account von SiteForge und wird über Cloudflare Pages durch SiteForge veröffentlicht und verwaltet. Beim <strong>Elite</strong>-Paket richten wir einen eigenen projektbezogenen GitHub-Account sowie eine projektbezogene Cloudflare-Pages-Verwaltung für dich ein.</div></details>
-<details><summary>Kann ich meine Website später selbst bearbeiten?</summary><div class="answer">Bei <strong>Starter</strong> und <strong>Pro</strong> musst du dich um nichts Technisches kümmern: Du hast keinen direkten Code-Zugriff, sondern gibst Änderungswünsche über deine monatlichen Updates an mich weiter. Wenn du Inhalte und HTML-/CSS-Code jederzeit selbst bearbeiten möchtest, ist das <strong>Elite</strong>-Paket mit eigenem GitHub-Account die richtige Wahl (Bearbeitung direkt im Code/Repository, kein grafisches Baukasten-System).</div></details>
-<details><summary>Wie laufen die monatlichen Updates ab?</summary><div class="answer">Je nach Paket sind 3 (Starter), 5 (Pro) oder 7 (Elite) Updates pro Monat durch SiteForge enthalten. Du schickst mir deine Text-, Bild- oder Inhaltsänderungen per E-Mail. Was genau unter ein reguläres Update fällt und wie umfangreichere Umbauten geregelt sind, legen wir vorab im Angebot fest.</div></details>
-<details><summary>Wie stelle ich eine Anfrage?</summary><div class="answer">Klicke auf einen der Anfrage-Buttons. Dein E-Mail-Programm öffnet sich mit einer vorbereiteten Vorlage an <code>direktanfragepaul@gmail.com</code>. Hast du kein E-Mail-Programm eingerichtet, kopierst du die Adresse einfach im Kontaktbereich.</div></details>
-</div>
-</div>
-</section>
+  <!-- FAQ -->
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Fragen &amp; Antworten</p>
+        <h2 id="faq-title">Häufig gestellte Fragen</h2>
+        <p>Die wichtigsten Details im Überblick.</p>
+      </div>
+      <div class="faq reveal">
+        <details><summary>Welche Adresse bekommt meine Website und ist eine eigene Domain möglich?</summary><div class="answer">Jede Website erhält zunächst eine kostenlose <code>pages.dev</code>-Adresse über Cloudflare Pages. Wenn du bereits eine eigene Domain besitzt oder nutzen möchtest, binden wir diese über Cloudflare an deine Website an.</div></details>
+        <details><summary>Wie funktioniert das Hosting bei Starter, Pro und Elite?</summary><div class="answer">Alle Websites werden in HTML und CSS erstellt. Bei <strong>Starter</strong> und <strong>Pro</strong> liegt der Code auf dem GitHub-Account von SiteForge und wird über Cloudflare Pages durch SiteForge veröffentlicht und verwaltet. Beim <strong>Elite</strong>-Paket richten wir einen eigenen projektbezogenen GitHub-Account sowie eine projektbezogene Cloudflare-Pages-Verwaltung für dich ein.</div></details>
+        <details><summary>Kann ich meine Website später selbst bearbeiten?</summary><div class="answer">Bei <strong>Starter</strong> und <strong>Pro</strong> musst du dich um nichts Technisches kümmern: Du hast keinen direkten Code-Zugriff, sondern gibst Änderungswünsche über deine monatlichen Updates an mich weiter. Wenn du Inhalte und HTML-/CSS-Code jederzeit selbst bearbeiten möchtest, ist das <strong>Elite</strong>-Paket mit eigenem GitHub-Account die richtige Wahl (Bearbeitung direkt im Code/Repository, kein grafisches Baukasten-System).</div></details>
+        <details><summary>Wie laufen die monatlichen Updates ab?</summary><div class="answer">Je nach Paket sind 3 (Starter), 5 (Pro) oder 7 (Elite) Updates pro Monat durch SiteForge enthalten. Du schickst mir deine Text-, Bild- oder Inhaltsänderungen per E-Mail. Was genau unter ein reguläres Update fällt und wie umfangreichere Umbauten geregelt sind, legen wir vorab im Angebot fest.</div></details>
+        <details><summary>Wie stelle ich eine Anfrage?</summary><div class="answer">Klicke auf einen der Anfrage-Buttons. Dein E-Mail-Programm öffnet sich mit einer vorbereiteten Vorlage an <code>direktanfragepaul@gmail.com</code>. Hast du kein E-Mail-Programm eingerichtet, kopierst du die Adresse einfach im Kontaktbereich.</div></details>
+      </div>
+    </div>
+  </section>
 
-<section id="kontakt">
-<div class="container">
-<div class="cta reveal">
-<h2>Bereit für deine neue Website?</h2>
-<p>Schreib mir unverbindlich, welches Paket und welche Inhalte du dir vorstellst – ich melde mich persönlich bei dir zurück.</p>
-<a href="mailto:direktanfragepaul@gmail.com?subject=Website-Anfrage%20%C3%BCber%20SiteForge&amp;body=Hallo%20SiteForge-Team,%0D%0A%0D%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Website.%0D%0A%0D%0AGew%C3%BCnschtes%20Paket:%20%5BStarter%20/%20Pro%20/%20Elite%5D%0D%0AProjektbeschreibung:%20%0D%0AGew%C3%BCnschte%20Inhalte:%20%0D%0ATexte,%20Bilder%20oder%20Logo%20vorhanden%20(Ja/Nein):%20%0D%0A%0D%0AViele%20Gr%C3%BC%C3%9Fe" class="btn btn-primary">Anfrage per E-Mail senden</a>
-<div class="contact-alt">
-<div class="contact-row">
-<a href="mailto:direktanfragepaul@gmail.com" class="email">direktanfragepaul@gmail.com</a>
-<button type="button" class="btn-copy" id="copyEmailBtn" aria-label="E-Mail-Adresse in die Zwischenablage kopieren" hidden>E-Mail kopieren</button>
-</div>
-<div id="copyStatus" class="status" role="status" aria-live="polite"></div>
-</div>
-</div>
-</div>
-</section>
+  <!-- Kontakt -->
+  <section id="kontakt" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="cta reveal">
+        <h2 id="contact-title">Bereit für deine neue Website?</h2>
+        <p>Schreib mir unverbindlich, welches Paket und welche Inhalte du dir vorstellst – ich melde mich persönlich bei dir zurück.</p>
+        <a href="mailto:direktanfragepaul@gmail.com?subject=Website-Anfrage%20%C3%BCber%20SiteForge&amp;body=Hallo%20SiteForge-Team,%0D%0A%0D%0Aich%20interessiere%20mich%20f%C3%BCr%20eine%20Website.%0D%0A%0D%0AGew%C3%BCnschtes%20Paket:%20%5BStarter%20/%20Pro%20/%20Elite%5D%0D%0AProjektbeschreibung:%20%0D%0AGew%C3%BCnschte%20Inhalte:%20%0D%0ATexte,%20Bilder%20oder%20Logo%20vorhanden%20(Ja/Nein):%20%0D%0A%0D%0AViele%20Gr%C3%BC%C3%9Fe" class="btn btn-primary btn-lg">Anfrage per E-Mail senden</a>
+        <div class="contact-alt">
+          <div class="contact-row">
+            <a href="mailto:direktanfragepaul@gmail.com" class="email">direktanfragepaul@gmail.com</a>
+            <button type="button" class="btn btn-secondary btn-sm" id="copyEmailBtn" data-email="direktanfragepaul@gmail.com" hidden>E-Mail kopieren</button>
+          </div>
+          <p id="copyStatus" class="status" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-<footer>
-<div class="container footer-inner">
-<a href="#start" class="logo" aria-label="SiteForge – zum Seitenanfang"><img src="https://i.ibb.co/xKZcf0mD/Dunkelgr-n-Grau-Retro-Schlicht-Social-Media-Agentur-Logo.png" alt="SiteForge – Websites &amp; More" width="340" height="104" loading="lazy" decoding="async"></a>
-<p>© 2026 SiteForge. Moderne Websites. Individuell erstellt. Zuverlässig gehostet.</p>
-</div>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="#start" class="logo" aria-label="SiteForge – zum Seitenanfang">
+      <img src="/assets/img/logo-mark.svg" alt="" width="38" height="38" loading="lazy">
+      <span class="logo-text" aria-hidden="true">
+        <span class="logo-name">Site<span>Forge</span></span>
+        <span class="logo-tagline">Websites &amp; More</span>
+      </span>
+    </a>
+    <nav aria-label="Fußzeile">
+      <ul class="footer-nav">
+        <li><a href="#referenzen">Referenzen</a></li>
+        <li><a href="#pakete">Pakete</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <p>© 2026 SiteForge. Moderne Websites. Individuell erstellt. Zuverlässig gehostet.</p>
+  </div>
 </footer>
-
-<script>
-(function(){
-var root=document.documentElement,burger=document.getElementById('burgerBtn'),links=document.getElementById('navLinks'),header=document.getElementById('siteHeader');
-var mq=window.matchMedia('(max-width:1060px)');
-
-function setOffset(){if(header&&header.offsetHeight)root.style.setProperty('--header-h',header.offsetHeight+'px')}
-setOffset();window.addEventListener('resize',setOffset);
-
-if(burger&&links){
- function setMenu(open,returnFocus){
-  var isOpen=open&&mq.matches;
-  links.classList.toggle('open',isOpen);
-  burger.classList.toggle('active',isOpen);
-  burger.setAttribute('aria-expanded',String(isOpen));
-  burger.setAttribute('aria-label',isOpen?'Menü schließen':'Menü öffnen');
-  if(mq.matches&&!isOpen){links.setAttribute('inert','')}else{links.removeAttribute('inert')}
-  if(returnFocus)burger.focus();
- }
- setMenu(false);
- burger.addEventListener('click',function(){var o=!links.classList.contains('open');setMenu(o,!o);if(o){var a=links.querySelector('a');if(a)a.focus()}});
- links.addEventListener('click',function(e){if(e.target.closest('a'))setMenu(false)});
- document.addEventListener('keydown',function(e){if(e.key==='Escape'&&links.classList.contains('open')){setMenu(false,true)}});
- document.addEventListener('click',function(e){if(links.classList.contains('open')&&!links.contains(e.target)&&!burger.contains(e.target))setMenu(false)});
- var onChange=function(){setMenu(false);setOffset()};
- mq.addEventListener?mq.addEventListener('change',onChange):mq.addListener(onChange);
-}
-
-var items=document.querySelectorAll('.reveal');
-if(items.length&&'IntersectionObserver' in window&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
- var vh=window.innerHeight,io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})});
- items.forEach(function(el){el.getBoundingClientRect().top<vh?el.classList.add('in'):io.observe(el);el.addEventListener('focusin',function(){el.classList.add('in')})});
- root.classList.add('reveal-ready');
-}
-
-var btn=document.getElementById('copyEmailBtn'),st=document.getElementById('copyStatus'),mail='direktanfragepaul@gmail.com';
-if(btn&&st){
- btn.hidden=false;
- btn.addEventListener('click',function(){
-  var fail=function(){st.textContent='Kopieren nicht möglich – bitte die Adresse markieren: '+mail};
-  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(mail).then(function(){st.textContent='E-Mail-Adresse kopiert.'},fail)}else{fail()}
- });
-}
-})();
-</script>
 </body>
 </html>
