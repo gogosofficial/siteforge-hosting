@@ -232,6 +232,9 @@ main:focus { outline: none; }
 .nav-links a[aria-current="true"] { color: var(--accent); }
 .nav-links .btn { min-height: 42px; margin-left: 10px; padding: 8px 18px; font-size: .9rem; }
 
+/* Kompakter Anfrage-Button neben dem Menü – nur in der mobilen Navigation */
+.nav-cta-mobile { display: none; margin-left: auto; min-height: 42px; padding: 8px 16px; font-weight: 600; }
+
 .burger {
   display: none;
   flex-shrink: 0;
@@ -587,6 +590,8 @@ main:focus { outline: none; }
   :root { --header-h: 64px; }
 
   .js .burger { display: inline-flex; }
+  .js .nav-cta-mobile { display: inline-flex; }
+  .js .nav { gap: 10px; }
   .js .nav-links {
     position: absolute;
     top: 100%;
@@ -661,7 +666,16 @@ main:focus { outline: none; }
   .mock-site { padding: 16px; }
 }
 
+/* Tablet hochkant: Referenzen als Zeile – Screenshot links, Text rechts */
+@media (min-width: 640px) and (max-width: 900px) {
+  .ref-grid { max-width: none; }
+  .ref-card { flex-direction: row; }
+  .ref-shot { flex: 0 0 42%; border-bottom: 0; border-right: 1px solid var(--line); }
+  .ref-shot img { height: 100%; aspect-ratio: auto; }
+}
+
 @media (max-width: 360px) {
+  .js .nav-cta-mobile { padding: 8px 12px; }
   .logo-tagline { display: none; }
   .pay-item { flex-direction: column; gap: 12px; }
   .footer-inner { grid-template-columns: minmax(0, 1fr); }

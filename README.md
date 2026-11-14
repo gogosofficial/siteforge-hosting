@@ -23,7 +23,7 @@ public/                  ← Ausgabeordner für Cloudflare Pages
 ## Nach Änderungen an CSS oder JS
 
 `style.css` und `main.js` werden einen Tag lang im Browser zwischengespeichert. Damit Besucher sofort die neue Version
-bekommen, die Versionsnummer in `index.html` und `404.html` hochzählen (`style.css?v=3` → `?v=4`).
+bekommen, die Versionsnummer in `index.html` und `404.html` hochzählen (`style.css?v=4` → `?v=5`).
 
 ## Lokal ansehen
 
