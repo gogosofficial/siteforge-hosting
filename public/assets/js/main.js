@@ -104,8 +104,12 @@
       });
     });
 
+    // Sprungziel (z. B. /#pakete) sofort zeigen, auch wenn der Browser erst danach scrollt
+    var target = null;
+    try { target = location.hash.length > 1 ? document.querySelector(location.hash) : null; } catch (e) { /* ungültiger Anker */ }
+
     reveals.forEach(function (el) {
-      if (el.getBoundingClientRect().top < viewport) el.classList.add('in');
+      if (el.getBoundingClientRect().top < viewport || (target && target.contains(el))) el.classList.add('in');
       else io.observe(el);
       // Per Tastatur angesteuerte Inhalte sofort sichtbar machen
       el.addEventListener('focusin', function () { el.classList.add('in'); });
